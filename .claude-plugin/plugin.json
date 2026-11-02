@@ -1,16 +1,38 @@
 {
   "name": "cogumi-eval",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Evaluate any Claude plugin or skill. Reads its code to derive rubrics, runs it with a dynamic user proxy, judges against a baseline, and publishes a comparison report.",
   "author": {
     "name": "Vivek Durairaj"
   },
-  "repository": "https://github.com/vivekdurairaj/cogumi-eval",
+  "repository": "https://github.com/dkeviv/cogumi-eval",
   "keywords": [
     "evals",
     "plugin-testing",
     "llm-judge",
     "skill-evaluation",
     "ab-testing"
+  ],
+  "commands": [
+    {
+      "name": "eval",
+      "skill": "skills/cogumi-eval/SKILL.md",
+      "description": "Full eval: read code → derive rubrics → confirm design → generate all arms → judge → publish report."
+    },
+    {
+      "name": "ab",
+      "skill": "skills/cogumi-eval/ab.md",
+      "description": "Quick A/B: baseline vs one named plugin or skill. Auto-detects type, skips arm-selection step, runs all phases."
+    },
+    {
+      "name": "ab-plugin",
+      "skill": "skills/cogumi-eval/ab-plugin.md",
+      "description": "Run the plugin arm in isolation: execute the named plugin end-to-end and return its raw output, labelled. No comparison."
+    },
+    {
+      "name": "ab-skill",
+      "skill": "skills/cogumi-eval/ab-skill.md",
+      "description": "Run the skill arm in isolation: execute the named skill end-to-end and return its raw output, labelled. No comparison."
+    }
   ]
 }
