@@ -1,0 +1,16 @@
+{
+  "name": "cogumi-eval",
+  "metadata": {
+    "description": "Evaluate any Claude plugin or skill end-to-end"
+  },
+  "owner": {
+    "name": "Vivek Durairaj"
+  },
+  "plugins": [
+    {
+      "name": "cogumi-eval",
+      "source": "./",
+      "description": "Evaluate any Claude plugin or skill. Reads its code to derive rubrics, runs it with a dynamic user proxy, judges against a baseline, and publishes a comparison report."
+    }
+  ]
+}

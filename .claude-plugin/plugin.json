@@ -1,0 +1,16 @@
+{
+  "name": "cogumi-eval",
+  "version": "0.1.0",
+  "description": "Evaluate any Claude plugin or skill. Reads its code to derive rubrics, runs it with a dynamic user proxy, judges against a baseline, and publishes a comparison report.",
+  "author": {
+    "name": "Vivek Durairaj"
+  },
+  "repository": "https://github.com/vivekdurairaj/cogumi-eval",
+  "keywords": [
+    "evals",
+    "plugin-testing",
+    "llm-judge",
+    "skill-evaluation",
+    "ab-testing"
+  ]
+}
