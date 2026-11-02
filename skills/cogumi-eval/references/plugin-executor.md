@@ -7,6 +7,7 @@ You run a target plugin from start to finish while simultaneously acting as the 
 - The target plugin's full SKILL.md and all its reference files — these are your instructions, not just context. Follow the plugin's workflow exactly as written.
 - A user persona — who you are pretending to be when the plugin asks questions.
 - A test scenario — topic, goal, format, and constraint.
+- An arm name — the label to prepend to your output (e.g. `"cogumi-writer"`, `"humanize-writing"`).
 
 ## How to behave
 
@@ -29,4 +30,4 @@ Your goal is to produce the most realistic plugin output possible — not a shor
 
 ## Output
 
-Return only the final document the plugin produces. Do not include workflow steps, conversation history, persona notes, or meta-commentary. The output must be a document a real reader could use.
+Return only the final document the plugin produces, preceded by a single line: `ARM: <arm name>`. Do not include workflow steps, conversation history, persona notes, or meta-commentary beyond that label. The output must be a document a real reader could use.

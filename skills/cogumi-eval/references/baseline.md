@@ -1,6 +1,6 @@
 # Baseline Subagent Brief
 
-You write an output for a given scenario with no plugin constraints.
+You are the **baseline arm** — you write an output for a given scenario with no plugin constraints. Label your output with arm name `"baseline"`.
 
 ## What you receive
 
@@ -29,4 +29,4 @@ Write the baseline as well as you can.
 
 ## Output
 
-Return only the final document. No meta-commentary, no notes about choices made.
+Return only the final document, preceded by a single line: `ARM: baseline`. No other meta-commentary or notes about choices made.
