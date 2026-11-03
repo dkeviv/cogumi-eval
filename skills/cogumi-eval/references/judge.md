@@ -21,7 +21,7 @@ You evaluate outputs from all arms against confirmed rubric dimensions and retur
 
 ## Output format
 
-Return a JSON object with one key per dimension name, each holding an array of arm verdicts:
+Return a JSON object with two top-level keys: `dimensions` (array, one entry per rubric dimension) and `holistic` (array, up to three entries). Each `dimensions` entry has `dimension` (string) and `arms` (array, one entry per arm, in the order arms were passed to you). Each `holistic` entry has `arm`, `quote`, `note`, and `direction` — which must be `"positive"` or `"negative"`. The cap of three `holistic` entries applies across all arms combined.
 
 ```json
 {
