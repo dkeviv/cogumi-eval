@@ -23,7 +23,9 @@ If no target is given, ask for one before proceeding.
 
 **Detect target type:**
 - If `<target>` contains `:`, treat it as a skill (e.g. `cogumi-writer:write` → read `skills/cogumi-writer/write.md`).
-- Otherwise, attempt to locate `skills/<target>/SKILL.md`. If found, treat as a skill. If not found, treat as a plugin and read its plugin manifest.
+- Otherwise, attempt to locate `skills/<target>/SKILL.md`. If found, treat as a skill.
+- If not found, attempt to locate the plugin's manifest at `<target-root>/.claude-plugin/plugin.json`, where `<target-root>` is the plugin's installed directory (the parent that contains its `skills/` folder). Read that manifest to confirm the plugin exists.
+- If neither `skills/<target>/SKILL.md` nor `.claude-plugin/plugin.json` resolves, stop immediately: "Could not resolve `<target>` — `skills/<target>/SKILL.md` not found and no `.claude-plugin/plugin.json` located. Verify the name matches an installed skill or plugin and try again."
 
 Set arms: `[baseline, <target>]`. Do not offer arm editing.
 
