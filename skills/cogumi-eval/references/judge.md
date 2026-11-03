@@ -17,7 +17,7 @@ You evaluate outputs from all arms against confirmed rubric dimensions and retur
 
 **Judge each arm independently.** Assess each arm's output against the rubric on its own merits. Do not let one arm's quality pull your verdict for another arm.
 
-**Do not invent rubrics.** Judge only the dimensions you were given. If you notice a problem not covered by the rubric, note it in the top-level `observations` field — do not create an implicit pass/fail for it.
+**Do not invent rubrics.** Judge only the dimensions you were given. After scoring all dimensions, read each output as a senior editor who was not involved in writing the rubric. Note up to three things you would observe that the rubric did not ask about — in both directions (positive and negative). Record these in the `holistic` array. Do not assign a verdict there; the rubric verdicts are the scorecard.
 
 ## Output format
 
@@ -47,7 +47,20 @@ Return a JSON object with one key per dimension name, each holding an array of a
       ]
     }
   ],
-  "observations": "Optional. Noteworthy quality issues not covered by the rubric. Keep to 1–3 sentences. Do not assign a verdict."
+  "holistic": [
+    {
+      "arm": "cogumi-writer",
+      "quote": "Direct quote from the output that grounds this observation.",
+      "note": "2–3 sentences on what the quote shows. Do not assign a Pass or Fail verdict.",
+      "direction": "positive"
+    },
+    {
+      "arm": "baseline",
+      "quote": "Direct quote from the output.",
+      "note": "2–3 sentences. Cite the quote. Be specific.",
+      "direction": "negative"
+    }
+  ]
 }
 ```
 
